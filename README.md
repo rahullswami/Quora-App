@@ -96,10 +96,6 @@ A Quora-like web application where users can ask questions, provide answers, fol
 - **Notifications**: Stay updated with the latest questions and answers via notifications.
 - **Profile Management**: View and edit your profile, including your questions and answers.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE]((https://www.instagram.com/rahullswami_/)) file for details.
-
 ## Contact
 
 - **Name**: Your Name
