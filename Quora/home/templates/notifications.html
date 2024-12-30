@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+    <!-- Main Content -->
+    <div class="container my-4">
+        <h2 class="text-center mb-4">Notifications</h2>
+        <div class="list-group shadow">
+            {% for notification in notifications %}
+                <div class="list-group-item">
+                    <i class="fas fa-bell me-2 text-danger"></i>
+                    {{ notification.message }}
+                    <small class="text-muted d-block">{{ notification.created_at|timesince }} ago</small>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endblock %}

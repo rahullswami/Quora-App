@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Main Content -->
+<div class="container my-4">
+    <h2 class="text-center mb-4">My Profile</h2>
+    <div class="row">
+        <!-- Profile Information -->
+        <div class="col-lg-4">
+            <div class="card shadow">
+                <img src="/static/img/logo.jpeg" class="card-img-top" alt="Profile Picture">
+                <div class="card-body text-center">
+                    <h5 class="card-title">
+                        {% if request.user.is_authenticated %}
+                            Welcome, {{ request.user.first_name }}!
+                        {% else %}
+                            Welcome, Guest!
+                        {% endif %}
+                    </h5>
+                    <p class="card-text">Web Developer | Tech Enthusiast | Lifelong Learner</p>
+                    <button class="btn btn-danger">Edit Profile</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- User Stats -->
+        <div class="col-lg-8">
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <h5>Stats</h5>
+                    <ul class="list-unstyled">
+                        <li><strong>Questions Asked:</strong> {{ user_questions.count }}</li>
+                        <li><strong>Followers:</strong> {{ follower_count }}</li>
+                        <!-- Add more stats as needed -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- My Questions Section -->
+            <div class="card shadow mb-4">
+                <div class="card-body">
+                    <h5>My Questions</h5>
+                    <ul class="list-unstyled">
+                        {% for question in user_questions %}
+                            <li>
+                                <h6>{{ question.title }}</h6>
+                                <p>{{ question.content }}</p>
+                                {% if question.image %}
+                                    <img src="{{ question.image.url }}" alt="Question Image" style="max-width: 100px;">
+                                {% endif %}
+                                <p>Posted at: {{ question.created_at }}</p>
+                                <hr>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <!-- My Answers Section -->
+            <div class="card shadow">
+                <div class="card-body">
+                    <h5>My Answers</h5>
+                    <ul class="list-unstyled">
+                        {% for answer in user_answers %}
+                            <li>
+                                <h6>Answer to: {{ answer.question.title }}</h6>
+                                <p>your answer: {{ answer.content }}</p>
+                                <p>Answered at: {{ answer.created_at }}</p>
+                                <hr>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
