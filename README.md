@@ -98,7 +98,7 @@ A Quora-like web application where users can ask questions, provide answers, fol
 
 ## Contact
 
-- **Name**: Your Name
-- **Email**: your.email@example.com
+- **Name**: Rahul Swami
+- **Email**: rahull.in01@gmail.com
 - **GitHub**: [rahullswami](https://github.com/rahullswami)
 
