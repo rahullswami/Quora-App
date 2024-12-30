@@ -98,7 +98,7 @@ A Quora-like web application where users can ask questions, provide answers, fol
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](rahullswami) file for details.
+This project is licensed under the MIT License. See the [LICENSE]((https://www.instagram.com/rahullswami_/)) file for details.
 
 ## Contact
 
